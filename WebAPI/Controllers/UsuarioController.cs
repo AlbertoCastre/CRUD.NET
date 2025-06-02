@@ -1,4 +1,5 @@
 ﻿using Domain.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Services.IServices;
 
@@ -6,6 +7,7 @@ namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize] // Requiere token JWT para todos los endpoints
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioServices _usuarioServices;

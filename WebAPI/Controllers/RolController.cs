@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebAPI.Services.IServices;
 
 namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize] // Requiere token JWT para todos los endpoints
     public class RolController : ControllerBase
     {
         private readonly IRolServices _rolServices;
